@@ -15,6 +15,14 @@ class HomePage extends StatelessWidget {
             onPressed: () => Get.toNamed(RouteName.add),
             icon: Icon(Icons.add),
           ),
+          IconButton(
+            onPressed: () {
+              Get.changeTheme(
+                Get.isDarkMode ? ThemeData.light() : ThemeData.dark()
+              );
+            },
+            icon: Icon(Icons.bedtime),
+          ),
         ],
       ),
       body: SafeArea(
@@ -27,7 +35,7 @@ class HomePage extends StatelessWidget {
                   )
                 : ListView.builder(
                     itemCount: usersC.users.length,
-                    itemBuilder: (context, i) => ListTile(
+                    itemBuilder: (_, i) => ListTile(
                       leading: CircleAvatar(),
                       title: Text("${usersC.users[i].name}"),
                       subtitle: Text("${usersC.users[i].email}"),

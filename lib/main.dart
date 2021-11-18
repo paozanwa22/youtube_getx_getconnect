@@ -6,15 +6,14 @@ import './pages/home_page.dart';
 
 import './controllers/usersC.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   final userC = Get.put(UsersC());
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
       getPages: AppPages.pages,
     );
