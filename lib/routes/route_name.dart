@@ -1,5 +1,5 @@
 abstract class RouteName {
   static const home = "/";
-  static const add = "/add";
+  static const tambah = "/tambah";
   static const profile = "/profile";
 }

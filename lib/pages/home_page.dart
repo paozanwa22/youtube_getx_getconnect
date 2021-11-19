@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
         title: Text("ALL USERS"),
         actions: [
           IconButton(
-            onPressed: () => Get.toNamed(RouteName.add),
+            onPressed: () => Get.toNamed(RouteName.tambah),
             icon: Icon(Icons.add),
           ),
           IconButton(

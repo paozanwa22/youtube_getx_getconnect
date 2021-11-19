@@ -23,8 +23,8 @@ class ProfilePage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () => userC.delete(uid).then(
-              (deleted) {
-                if (deleted) Get.back();
+              (_) {
+                if (_) Get.back();
               },
             ),
             icon: Icon(Icons.delete_forever),

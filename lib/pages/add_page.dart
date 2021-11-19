@@ -48,7 +48,7 @@ class AddPage extends StatelessWidget {
                   labelText: "Phone Number",
                   border: OutlineInputBorder(),
                 ),
-                onEditingComplete: () => usersC.add(
+                onEditingComplete: () => usersC.tambah(
                   addC.nameC.text,
                   addC.emailC.text,
                   addC.phoneC.text,
@@ -56,7 +56,7 @@ class AddPage extends StatelessWidget {
               ),
               SizedBox(height: 40),
               ElevatedButton(
-                onPressed: () => usersC.add(
+                onPressed: () => usersC.tambah(
                   addC.nameC.text,
                   addC.emailC.text,
                   addC.phoneC.text,

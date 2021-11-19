@@ -20,7 +20,7 @@ class AppPages {
       binding: ProfileB(),
     ),
     GetPage(
-      name: RouteName.add,
+      name: RouteName.tambah,
       page: () => AddPage(),
       binding: AddUserB(),
     ),

@@ -14,7 +14,7 @@ class UsersC extends GetxController {
     );
   }
 
-  void add(String name, String email, String phone) {
+  void tambah(String name, String email, String phone) {
     if (name != '' && email != '' && phone != '') {
       if (email.contains("@")) {        
         UserProvider().postData(name, email, phone).then((value) {
