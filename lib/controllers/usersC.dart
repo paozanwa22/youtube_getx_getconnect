@@ -16,7 +16,7 @@ class UsersC extends GetxController {
 
   void tambah(String name, String email, String phone) {
     if (name != '' && email != '' && phone != '') {
-      if (email.contains("@")) {        
+      if (email.contains("@")) {
         UserProvider().postData(name, email, phone).then((value) {
           users.add(
             User(
@@ -43,11 +43,15 @@ class UsersC extends GetxController {
   void edit(String id, String name, String email, String phone) {
     if (name != '' && email != '' && phone != '') {
       if (email.contains("@")) {
-        final user = userById(id);
-        user.name = name;
-        user.email = email;
-        user.phone = phone;
-        users.refresh();
+        UserProvider().editData(id, name, email, phone).then(
+          (_) {
+            final user = userById(id);
+            user.name = name;
+            user.email = email;
+            user.phone = phone;
+            users.refresh();
+          },
+        );
         Get.back();
       } else {
         snackBarError("Masukan email valid");
@@ -65,8 +69,12 @@ class UsersC extends GetxController {
       textConfirm: "Ya",
       confirmTextColor: Colors.white,
       onConfirm: () {
-        users.removeWhere((element) => element.id == id);
-        _deleted = true;
+        UserProvider().deleteData(id).then(
+          (_) {
+            users.removeWhere((element) => element.id == id);
+            _deleted = true;
+          },
+        );
         Get.back();
       },
       textCancel: "Tidak",
